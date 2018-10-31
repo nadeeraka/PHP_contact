@@ -1,6 +1,7 @@
 <?php
 session_start();
-print_r($_SESSION['error']);
+$error = isset($_SESSION['error']) ? $_SESSION['error'] :[];
+$field = isset($_SESSION['field']) ? $_SESSION['field'] :[];
 ?>
 <!DOCTYPE html>
 <html lang="en">
