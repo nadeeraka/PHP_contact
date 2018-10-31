@@ -1,3 +1,7 @@
+<?php
+session_start();
+print_r($_SESSION['error']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +16,12 @@
      <label for="">name</label>
      <input type="text" name="email">
      <label for="">email</label>
-     <input type="text" name="massage">
+     <input type="text" name="message">
      <label for="">massage</label>
      <button type="submit">Submit</button>
     </form>
     
 </body>
 </html>
+<?php
+unset($_SESSION['error']);
