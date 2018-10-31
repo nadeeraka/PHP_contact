@@ -25,11 +25,20 @@ if (isset($_POST['name'], $_POST['email'], $_POST['message'])) {
         }
       }
 
+      if (empty($errors)) {
+          $mail = new PHPMailer;
+          $mail->isSMPT();
+          $mail->SMTPAuth = true;
+
+          $mail->HOST = 'smpt.gmail.com';
+          $mail->Username = ''
+      }
+
 } else {
     $errors[] = 'Something went wrong !';
 }
 
-$_SESSION['error'] =$errors;
+$_SESSION['errors'] =$errors;
 $_SESSION['field'] =$field;
 header('Location: index.php');
 
